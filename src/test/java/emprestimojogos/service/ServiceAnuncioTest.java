@@ -1,16 +1,16 @@
-package br.ufmg.emprestimojogos.service;
+package emprestimojogos.service;
 
-import br.ufmg.emprestimojogos.apoio.Cenario;
-import br.ufmg.emprestimojogos.excecao.AcessoNegadoException;
-import br.ufmg.emprestimojogos.excecao.ImagemInvalidaException;
-import br.ufmg.emprestimojogos.excecao.RegraNegocioException;
-import br.ufmg.emprestimojogos.excecao.ValidacaoException;
-import br.ufmg.emprestimojogos.model.Anuncio;
-import br.ufmg.emprestimojogos.model.Emprestimo;
-import br.ufmg.emprestimojogos.model.Imagem;
-import br.ufmg.emprestimojogos.model.Jogo;
-import br.ufmg.emprestimojogos.model.StatusEmprestimo;
-import br.ufmg.emprestimojogos.model.Usuario;
+import emprestimojogos.apoio.Cenario;
+import emprestimojogos.excecao.AcessoNegadoException;
+import emprestimojogos.excecao.ImagemInvalidaException;
+import emprestimojogos.excecao.RegraNegocioException;
+import emprestimojogos.excecao.ValidacaoException;
+import emprestimojogos.classes.Anuncio;
+import emprestimojogos.classes.Emprestimo;
+import emprestimojogos.classes.Imagem;
+import emprestimojogos.classes.Jogo;
+import emprestimojogos.classes.StatusEmprestimo;
+import emprestimojogos.classes.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -126,6 +126,7 @@ class ServiceAnuncioTest {
     }
 
     @Test
+    @DisplayName("Imagem de caminho inexistente é rejeitada")
     void gerarImagemDeCaminhoInexistente() {
         assertThrows(ImagemInvalidaException.class, () -> service.gerarImagem("/nao/existe.png"));
     }
