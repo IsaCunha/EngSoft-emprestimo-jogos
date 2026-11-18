@@ -4,9 +4,56 @@ Sistema de controle empréstimo de jogo, modelado e implementado na disciplina d
 
 ## Como rodar
 
+Requisitos: **Java 17+** e **Maven 3.9+**.
+
 ```bash
 mvn compile exec:java    # demonstração de ponta a ponta no console
 ```
+
+## Testes
+
+Testes automatizados em JUnit 5, cobrindo os fluxos normais e alternativos (FA01–FA03) dos casos de uso.
+
+```bash
+mvn test                                        # todos os testes
+mvn test -Dtest=ServiceUsuarioTest              # uma classe
+mvn test -Dtest=ServiceUsuarioTest#cadastroValido   # um método
+```
+
+Cada teste aparece com o nome do seu `@DisplayName`, na ordem em que está no código:
+
+```
+▶ ServiceUsuarioTest  UC01 Cadastrar conta / UC02 Fazer login
+  ✔ UC01: cria e persiste a conta com senha em hash
+  ✔ UC01: dados inválidos ou incompletos indicam os campos a corrigir
+  ...
+✔ 12 testes · 12 passaram · 0 falhas
+```
+
+| Classe | Casos de uso |
+|--------|--------------|
+| `ServiceUsuarioTest` | UC01 Cadastrar conta, UC02 Fazer login |
+| `ServiceJogosTest` | UC03 Cadastrar jogo, UC05 Visualizar, UC06 Pesquisar |
+| `ServiceAnuncioTest` | UC04 Gerenciar anúncio |
+| `ServicoEmprestimosTest` | UC07 Manifestar interesse, UC09 Registrar empréstimo, UC10 Confirmar devolução |
+| `ServicoChatTest` | UC08 Negociar pelo chat |
+| `AplicarPenalidadeTest` | UC11 Aplicar penalidade |
+| `ServiceMultasTest` | UC12 Regularizar multa |
+| `AgendadorPrazosTest` | RF10–RF13 Agendador de prazos |
+
+```
+src/test
+├── java/emprestimojogos
+│   ├── agendamento/   # testes do agendador de prazos
+│   ├── apoio/         # Cenario (monta usuários, jogos e empréstimos em qualquer estado),
+│   │                  # RelatorioSlide (saída dos testes) e OrdemDoCodigo (ordem de execução)
+│   └── service/       # testes dos serviços de negócio
+└── resources/         # ativa o RelatorioSlide e o OrdemDoCodigo no JUnit
+```
+
+O `Cenario` usa um relógio ajustável para avançar os dias sem esperar dias reais, e dublês de e-mail e pagamento para simular falhas.
+
+> **Acentos no Windows:** se o terminal mostrar `├ú` no lugar de `ã`, rode `chcp 65001` antes do `mvn test`.
 
 ## Estrutura (camadas do projeto arquitetural)
 

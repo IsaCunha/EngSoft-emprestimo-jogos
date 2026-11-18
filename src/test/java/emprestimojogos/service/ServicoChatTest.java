@@ -85,6 +85,7 @@ class ServicoChatTest {
     }
 
     @Test
+    @DisplayName("Mensagem vazia é rejeitada")
     void mensagemVaziaRejeitada() {
         assertThrows(ValidacaoException.class, () -> chat.enviarMensagem(bruno.getIdUsuario(),
                 negociacao.getIdConversa(), "   "));
