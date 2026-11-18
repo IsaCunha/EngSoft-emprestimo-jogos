@@ -1,0 +1,11 @@
+# Gerado pelo Maven (classes compiladas e relatórios dos testes)
+target/
+
+# Arquivos de configuração das IDEs (cada um tem os seus)
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
