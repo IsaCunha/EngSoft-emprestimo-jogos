@@ -1,13 +1,13 @@
-package br.ufmg.emprestimojogos.agendamento;
+package emprestimojogos.agendamento;
 
-import br.ufmg.emprestimojogos.apoio.Cenario;
-import br.ufmg.emprestimojogos.model.Emprestimo;
-import br.ufmg.emprestimojogos.model.Jogo;
-import br.ufmg.emprestimojogos.model.Multa;
-import br.ufmg.emprestimojogos.model.StatusConta;
-import br.ufmg.emprestimojogos.model.StatusEmprestimo;
-import br.ufmg.emprestimojogos.model.TipoMulta;
-import br.ufmg.emprestimojogos.model.Usuario;
+import emprestimojogos.apoio.Cenario;
+import emprestimojogos.classes.Emprestimo;
+import emprestimojogos.classes.Jogo;
+import emprestimojogos.classes.Multa;
+import emprestimojogos.classes.StatusConta;
+import emprestimojogos.classes.StatusEmprestimo;
+import emprestimojogos.classes.TipoMulta;
+import emprestimojogos.classes.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
