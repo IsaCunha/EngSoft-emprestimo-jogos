@@ -1,14 +1,14 @@
-package br.ufmg.emprestimojogos.service;
+package emprestimojogos.service;
 
-import br.ufmg.emprestimojogos.apoio.Cenario;
-import br.ufmg.emprestimojogos.excecao.AcessoNegadoException;
-import br.ufmg.emprestimojogos.excecao.RegraNegocioException;
-import br.ufmg.emprestimojogos.excecao.ValidacaoException;
-import br.ufmg.emprestimojogos.infra.Texto;
-import br.ufmg.emprestimojogos.model.Emprestimo;
-import br.ufmg.emprestimojogos.model.Jogo;
-import br.ufmg.emprestimojogos.model.Mensagem;
-import br.ufmg.emprestimojogos.model.Usuario;
+import emprestimojogos.apoio.Cenario;
+import emprestimojogos.excecao.AcessoNegadoException;
+import emprestimojogos.excecao.RegraNegocioException;
+import emprestimojogos.excecao.ValidacaoException;
+import emprestimojogos.infra.Texto;
+import emprestimojogos.classes.Emprestimo;
+import emprestimojogos.classes.Jogo;
+import emprestimojogos.classes.Mensagem;
+import emprestimojogos.classes.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -85,6 +85,7 @@ class ServicoChatTest {
     }
 
     @Test
+    @DisplayName("Mensagem vazia é rejeitada")
     void mensagemVaziaRejeitada() {
         assertThrows(ValidacaoException.class, () -> chat.enviarMensagem(bruno.getIdUsuario(),
                 negociacao.getIdConversa(), "   "));

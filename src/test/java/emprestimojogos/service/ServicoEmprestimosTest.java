@@ -1,14 +1,14 @@
-package br.ufmg.emprestimojogos.service;
+package emprestimojogos.service;
 
-import br.ufmg.emprestimojogos.apoio.Cenario;
-import br.ufmg.emprestimojogos.excecao.AcessoNegadoException;
-import br.ufmg.emprestimojogos.excecao.RegraNegocioException;
-import br.ufmg.emprestimojogos.excecao.ValidacaoException;
-import br.ufmg.emprestimojogos.model.Conversa;
-import br.ufmg.emprestimojogos.model.Emprestimo;
-import br.ufmg.emprestimojogos.model.Jogo;
-import br.ufmg.emprestimojogos.model.StatusEmprestimo;
-import br.ufmg.emprestimojogos.model.Usuario;
+import emprestimojogos.apoio.Cenario;
+import emprestimojogos.excecao.AcessoNegadoException;
+import emprestimojogos.excecao.RegraNegocioException;
+import emprestimojogos.excecao.ValidacaoException;
+import emprestimojogos.classes.Conversa;
+import emprestimojogos.classes.Emprestimo;
+import emprestimojogos.classes.Jogo;
+import emprestimojogos.classes.StatusEmprestimo;
+import emprestimojogos.classes.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
